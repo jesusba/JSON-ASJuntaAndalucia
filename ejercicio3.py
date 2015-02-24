@@ -9,6 +9,7 @@ doc = json.load(f)
 
 taxonomiausuario = raw_input("Introduzca el nombre de una taxonomía: ")
 
-for ayuda in doc["taxonomia"]["taxonomia_item"]:
-	if ayuda["titulo"] == taxonomiausuario:
-		print doc["titulo"]
+for ayuda in doc:
+	for docu in ayuda["taxonomias"]["taxonomia_item"]:
+		if ayuda["titulo"] == taxonomiausuario:
+			print docu["titulo"]

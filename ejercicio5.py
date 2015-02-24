@@ -9,7 +9,8 @@ doc = json.load(f)
 ayudausuario = raw_input("Introduzca el título de una ayuda: ").capitalize()
 
 for ayudas in doc:
-	if ayudas["titulo"] == ayudausuario:
-		print "Plazo inicial:",ayudas["plazopresentacion"]["plazopresentacion_item"]["incial"][:10]
-		print "Plazo final:",ayudas["plazopresentacion"]["plazopresentacion_item"]["final"][:10]
+	for docu in ayudas["plazopresentacion"]["plazopresentacion_item"]:
+		if ayudas["titulo"] == ayudausuario:
+			print "Plazo inicial:",docu["incial"][:10]
+			print "Plazo final:",docu["final"][:10]
 		
