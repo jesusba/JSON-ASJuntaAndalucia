@@ -11,5 +11,6 @@ taxonomiausuario = raw_input("Introduzca el nombre de una taxonomía: ")
 
 for ayuda in doc:
 	for docu in ayuda["taxonomias"]["taxonomia_item"]:
-		if ayuda["titulo"] == taxonomiausuario:
-			print docu["titulo"]
+		if docu["nombre"] == taxonomiausuario:
+			print ""
+			print ayuda["titulo"]
