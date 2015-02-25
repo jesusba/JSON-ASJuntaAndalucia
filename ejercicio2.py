@@ -6,9 +6,18 @@ import json
 f = open('ayudas.json','r')
 doc = json.load(f)
 
-ayudausuario = raw_input("Introduzca el título de una ayuda: ").capitalize()
+ayudausuario = raw_input("Introduzca el ID de una ayuda: ").capitalize()
 
 for ayudas in doc:
-	for docu in ayudas["documentacion"]["documentacion_item"]:
-		if ayudas["titulo"] == ayudausuario:
-			print docu["titulo"]
+	if ayudas["id"]==ayudausuario:
+		if type(ayudas["documentacion"]["documentacion_item"])==list:
+			for docu in ayudas["documentacion"]["documentacion_item"]:
+				print ""
+				print docu["titulo"]
+		else:
+			if ayudas["documentacion"]["documentacion_item"]["titulo"] == None:
+				print ""
+				print "No tiene"
+			else:
+				print ""
+				print ayudas["documentacion"]["documentacion_item"]["titulo"]
