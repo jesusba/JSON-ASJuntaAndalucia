@@ -5,6 +5,7 @@
 import json
 
 f = open('ayudas.json','r')
+
 doc = json.load(f)
 
 taxonomiausuario = raw_input("Introduzca el nombre de una taxonomía: ")
